@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RJ MOBILE SOFTWARE</title>
+
+<style>
+body {
+  margin: 0;
+  background: black;
+  color: #00ffcc;
+  font-family: monospace;
+  overflow: hidden;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.container {
+  text-align: center;
+  margin-top: 80px;
+}
+
+h1 {
+  font-size: 40px;
+  text-shadow: 0 0 20px #00ffcc;
+}
+
+#typing {
+  font-size: 18px;
+  color: #0f0;
+  margin-bottom: 20px;
+}
+
+.card {
+  border: 1px solid #00ffcc;
+  margin: 10px auto;
+  padding: 15px;
+  width: 260px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #00ffcc;
+  transition: 0.3s;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #00ffcc;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 0 15px #00ffcc;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="matrix"></canvas>
+
+<div class="container">
+  <h1>⚡ RJ MOBILE SOFTWARE ⚡</h1>
+
+  <div id="typing"></div>
+
+  <div class="card">FRP Unlock 🔓</div>
+  <div class="card">MDM Remove ⚡</div>
+  <div class="card">IMEI Repair 📱</div>
+  <div class="card">All GSM Services 🔥</div>
+
+  <a class="btn" href="https://wa.me/918271065431">CONTACT NOW</a>
+</div>
+
+<script>
+var c = document.getElementById("matrix");
+var ctx = c.getContext("2d");
+
+c.height = window.innerHeight;
+c.width = window.innerWidth;
+
+var letters = "01HACKRJMS".split("");
+var font_size = 14;
+var columns = c.width/font_size;
+
+var drops = [];
+for(var x = 0; x < columns; x++) drops[x] = 1;
+
+function draw() {
+ctx.fillStyle = "rgba(0,0,0,0.05)";
+ctx.fillRect(0, 0, c.width, c.height);
+
+ctx.fillStyle = "#0f0";
+ctx.font = font_size + "px monospace";
+
+for(var i = 0; i < drops.length; i++) {
+var text = letters[Math.floor(Math.random()*letters.length)];
+ctx.fillText(text, i*font_size, drops[i]*font_size);
+
+if(drops[i]*font_size > c.height && Math.random() > 0.975)
+drops[i] = 0;
+
+drops[i]++;
+}
+}
+setInterval(draw, 33);
+
+var textArr = [
+"Initializing System...",
+"Bypassing Security...",
+"Access Granted ✅",
+"Welcome to RJMS Server 🔥"
+];
+
+let i = 0, j = 0, currentText = "", isDeleting = false;
+
+function type() {
+let display = document.getElementById("typing");
+
+if (i < textArr.length) {
+if (!isDeleting && j <= textArr[i].length) {
+currentText = textArr[i].substring(0, j++);
+}
+if (isDeleting && j >= 0) {
+currentText = textArr[i].substring(0, j--);
+}
+
+display.innerHTML = currentText;
+
+if (j == textArr[i].length) isDeleting = true;
+if (j == 0) {
+isDeleting = false;
+i++;
+if (i == textArr.length) i = 0;
+}
+}
+
+setTimeout(type, 100);
+}
+type();
+</script>
+
+</body>
+</html>
