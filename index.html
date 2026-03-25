@@ -6,184 +6,186 @@
 <title>RJ Mobile Software Solution</title>
 
 <style>
-body {
-    margin: 0;
-    padding: 0;
-    background: black;
-    color: #00ff00;
-    font-family: monospace;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
-/* MATRIX */
-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
+body{
+    background:black;
+    color:#00ff00;
+    font-family:monospace;
 }
 
 /* NAV */
-nav {
-    text-align: center;
-    padding: 20px;
-    border-bottom: 1px solid #00ff00;
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(0,0,0,0.7);
+    padding:15px;
+    text-align:center;
+    border-bottom:1px solid #00ff00;
 }
 
-nav a {
-    color: #00ff00;
-    margin: 0 15px;
-    text-decoration: none;
-}
-
-nav a:hover {
-    text-shadow: 0 0 10px #00ff00;
+nav a{
+    margin:0 20px;
+    color:#00ff00;
+    text-decoration:none;
 }
 
 /* HERO */
-.hero {
-    text-align: center;
-    margin-top: 80px;
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 }
 
-.hero h1 {
-    font-size: 35px;
+.hero h1{
+    font-size:30px;
+    text-shadow:0 0 20px #00ff00;
 }
 
-.typing {
-    border-right: 3px solid #00ff00;
-    padding-right: 5px;
+.typing{
+    border-right:3px solid #00ff00;
 }
 
 /* LOGO */
-.logo img {
-    width: 220px;
-    margin-top: 20px;
+.logo img{
+    width:230px;
+    margin-top:20px;
+    animation: glow 2s infinite alternate;
 }
 
-/* ABOUT */
-.about {
-    max-width: 700px;
-    margin: 100px auto;
-    text-align: center;
+@keyframes glow{
+    from{filter: drop-shadow(0 0 5px #00ff00);}
+    to{filter: drop-shadow(0 0 25px #00ff00);}
 }
 
-/* CONTACT */
-.contact {
-    text-align: center;
-    margin-bottom: 50px;
+/* SECTION */
+section{
+    padding:100px 20px;
+    text-align:center;
+    max-width:900px;
+    margin:auto;
 }
 
-.contact a {
-    color: #00ff00;
-    text-decoration: none;
-    font-size: 18px;
+/* SERVICE BOX */
+.services{
+    text-align:left;
+    margin-top:20px;
+    line-height:1.8;
 }
 
-.contact a:hover {
-    text-shadow: 0 0 10px #00ff00;
+/* BUTTON */
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 20px;
+    border:1px solid #00ff00;
+    color:#00ff00;
+    text-decoration:none;
+}
+
+.btn:hover{
+    background:#00ff00;
+    color:black;
 }
 </style>
 </head>
 
 <body>
 
-<canvas id="matrix"></canvas>
-
 <nav>
 <a href="#">Home</a>
 <a href="#about">About</a>
+<a href="#services">Services</a>
 <a href="#contact">Contact</a>
 </nav>
 
 <div class="hero">
-<h1>WELCOME TO <br><span class="typing" id="text"></span></h1>
+<h1><span class="typing" id="text"></span></h1>
 
 <div class="logo">
-<img src="logo.png" alt="RJ Mobile Logo">
+<img src="logo.png">
 </div>
 </div>
 
-<div class="about" id="about">
-<h2>About Us</h2>
+<section id="about">
+<h2>About</h2>
 <p>
-RJ MOBILE SOFTWARE SOLUTION 🔥 <br><br>
-हम आपको देते हैं Best Mobile Services 💯<br>
-FRP Unlock | Flash | Software Repair | Unlock Services ⚡️<br>
-Professional GSM Solutions 🚀
+RJ MOBILE SOFTWARE SOLUTION 🔥<br><br>
+Professional GSM Repair & Unlock Services ⚡️
 </p>
+</section>
+
+<section id="services">
+<h2>Our Services</h2>
+
+<div class="services">
+🔧 RJ MOBILE SOFTWARE SOLUTION – Your One-Stop GSM Repair & Unlocking Hub 🔧 <br><br>
+
+Unlocking excellence in the world of mobile servicing! We specialize in flashing, FRP unlock, IMEI solutions, and tool activations across all major brands and chipsets.<br><br>
+
+📲 Our GSM Services Include:<br><br>
+
+✅ Vivo (MTK & Qualcomm) – Userdata Reset + FRP Bypass<br>
+✅ Oppo – Flashing & FRP ON<br>
+🚀 Xiaomi HyperOS 2.0 (Android 15) – FRP ON<br>
+🔥 Samsung – FRP Unlock via IMEI/USB<br>
+✅ Motorola MTK – Flashing & FRP ON<br>
+⚡️ Realme – Flashing + FRP ON<br>
+🚀 Nothing Phone – Flashing + FRP ON<br>
+✅ Honor – FRP via IMEI ON<br>
+🔥 Tecno | Infinix | Itel – AUTH Flashing + FRP<br>
+✅ KG / MDM Unlock – All Supported Models<br>
+📱 All Brands | All Models | All Android Versions<br>
+🔥 IT Admin 2HR Reset – Instant Service<br><br>
+
+💡 BONUS:<br>
+🎯 All Tool Dongle Activations & Rentals Available<br>
+(UFI, UMT, Chimera, EFT, Hydra, Pandora, & more)
 </div>
 
-<div class="contact" id="contact">
-<h2>Contact Us</h2>
+</section>
 
-<p>📞 Call / WhatsApp:</p>
+<section id="contact">
+<h2>Contact</h2>
 
-<a href="https://wa.me/918271065431" target="_blank">
-+91 8271065431
+<a class="btn" href="https://wa.me/918271065431">
+📲 WhatsApp Now
 </a>
 
-</div>
+</section>
 
 <script>
-// typing
-let words = ["RJ MOBILE", "SOFTWARE SOLUTION", "GSM EXPERT"];
-let i = 0, j = 0, current = "", isDeleting = false;
+let words = ["RJ MOBILE SOFTWARE SOLUTION"];
+let i=0,j=0,current="",isDeleting=false;
 
 function type(){
-    current = words[i];
+current=words[i];
 
-    if(!isDeleting){
-        document.getElementById("text").innerHTML = current.substring(0, j++);
-        if(j > current.length){
-            isDeleting = true;
-            setTimeout(type, 1000);
-            return;
-        }
-    } else {
-        document.getElementById("text").innerHTML = current.substring(0, j--);
-        if(j == 0){
-            isDeleting = false;
-            i = (i+1) % words.length;
-        }
-    }
-    setTimeout(type, 100);
+if(!isDeleting){
+document.getElementById("text").innerHTML=current.substring(0,j++);
+if(j>current.length){
+isDeleting=true;
+setTimeout(type,1500);
+return;
+}
+}else{
+document.getElementById("text").innerHTML=current.substring(0,j--);
+if(j==0){
+isDeleting=false;
+i=(i+1)%words.length;
+}
+}
+setTimeout(type,80);
 }
 type();
-
-// matrix
-const canvas = document.getElementById("matrix");
-const ctx = canvas.getContext("2d");
-
-canvas.height = window.innerHeight;
-canvas.width = window.innerWidth;
-
-let letters = "01";
-letters = letters.split("");
-
-let fontSize = 14;
-let columns = canvas.width / fontSize;
-
-let drops = [];
-for(let x = 0; x < columns; x++) drops[x] = 1;
-
-function draw(){
-    ctx.fillStyle = "rgba(0,0,0,0.05)";
-    ctx.fillRect(0,0,canvas.width,canvas.height);
-
-    ctx.fillStyle = "#0f0";
-    ctx.font = fontSize + "px monospace";
-
-    for(let i = 0; i < drops.length; i++){
-        let text = letters[Math.floor(Math.random()*letters.length)];
-        ctx.fillText(text, i*fontSize, drops[i]*fontSize);
-
-        if(drops[i]*fontSize > canvas.height && Math.random() > 0.975)
-            drops[i] = 0;
-
-        drops[i]++;
-    }
-}
-setInterval(draw, 33);
 </script>
 
 </body>
